@@ -17,7 +17,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.viewHo
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        
+
 
         return null;
     }

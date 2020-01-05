@@ -7,6 +7,29 @@
     tools:context=".Sharmin.Stackactivity">
 
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="187dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/colorPrimary"
+        android:text="Push"
+        android:textColor="#FFF"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="185dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:text="POP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

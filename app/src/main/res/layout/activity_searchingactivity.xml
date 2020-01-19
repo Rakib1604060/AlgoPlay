@@ -44,5 +44,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+    <EditText
+        android:id="@+id/plain_text_input"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/searchnumber"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="99dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="#990000"
+        android:text="GO"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/plain_text_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

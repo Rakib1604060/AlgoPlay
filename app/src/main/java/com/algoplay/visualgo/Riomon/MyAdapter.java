@@ -35,7 +35,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.viewHolder> {
         SearchItem item = myClasses.get(i);
         String number = String.valueOf(item.getNumber());
 
-
         viewHolder.numberText.setText(number);
 
     }

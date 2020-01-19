@@ -13,6 +13,10 @@
 
 
         </activity>
+        <activity android:name=".Riomon.BinarySearchActivity">
+
+
+        </activity>
         <activity android:name=".Rakib.Sortingactivity" />
         <activity android:name=".Sharmin.Stackactivity" />
         <activity android:name=".MainActivity">

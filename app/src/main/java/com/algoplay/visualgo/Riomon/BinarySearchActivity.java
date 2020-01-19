@@ -1,24 +1,21 @@
 package com.algoplay.visualgo.Riomon;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.algoplay.visualgo.R;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
-public class Searchingactivity extends AppCompatActivity {
+public class BinarySearchActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     MyAdapter adapter;
     ArrayList<SearchItem> myitems=new ArrayList<>();
@@ -31,10 +28,10 @@ public class Searchingactivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_searchingactivity);
-        this.setTitle("Linear Search");
+        setContentView(R.layout.activity_binarysearch);
+        this.setTitle("Binary Search");
 
-        for (int i=0;i<=47;i++){
+        for (int i=47;i>=0;i--){
              myitems.add(new SearchItem(i));
 
         }
@@ -45,7 +42,12 @@ public class Searchingactivity extends AppCompatActivity {
                 String a= plainText.getText().toString();
                 //Toast.makeText(Searchingactivity.this, "button pressed"+a, Toast.LENGTH_SHORT).show();
                 //adapter.notifyDataSetChanged();
-                counter=0;
+
+                myitems.clear();
+                for( int i=0;i<=47;i++){
+                    myitems.add(new SearchItem(i));
+                }
+                counter=23;
                 Callalgorithm(a);
 
             }
@@ -53,12 +55,23 @@ public class Searchingactivity extends AppCompatActivity {
     }
 
     private void Callalgorithm(String a) {
-            final int bal = Integer.parseInt(a);
 
+            final int bal = Integer.parseInt(a);
             final View v = recyclerView.getLayoutManager().findViewByPosition(counter);
             final int Val = myitems.get(counter).getNumber();
+
            // Toast.makeText(Searchingactivity.this, "button pressed" + Val, Toast.LENGTH_SHORT).show();
             v.setBackgroundColor(Color.GREEN);
+
+           /* if(bal>Val)
+            {
+                for(int i=0;i<23;i++)
+                {
+                    v = recyclerView.getLayoutManager().findViewByPosition(i);
+                    v.setBackgroundColor(Color.BLACK);
+                }
+            }*/
+
             if (Val==bal){
 
             }else{
@@ -75,9 +88,12 @@ public class Searchingactivity extends AppCompatActivity {
                     if (bal!=Val){
                         v.setBackgroundColor(Color.BLACK);
                         handler.postDelayed(this,500);
+
                     }
                 }
             },500);}
+
+
 
     }
 

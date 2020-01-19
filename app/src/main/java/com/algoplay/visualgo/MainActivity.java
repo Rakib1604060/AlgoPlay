@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.algoplay.visualgo.Rakib.Sortingactivity;
+import com.algoplay.visualgo.Riomon.BinarySearchActivity;
 import com.algoplay.visualgo.Riomon.Searchingactivity;
 import com.algoplay.visualgo.Sharmin.Stackactivity;
 

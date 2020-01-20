@@ -9,14 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Riomon.Searchingactivity">
-
-
-        </activity>
-        <activity android:name=".Riomon.BinarySearchActivity">
-
-
-        </activity>
+        <activity android:name=".Rakib.SelectionSort"></activity>
+        <activity android:name=".Riomon.Searchingactivity"></activity>
+        <activity android:name=".Riomon.BinarySearchActivity"></activity>
         <activity android:name=".Rakib.Sortingactivity" />
         <activity android:name=".Sharmin.Stackactivity" />
         <activity android:name=".MainActivity">

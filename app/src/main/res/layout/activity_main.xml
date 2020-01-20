@@ -156,4 +156,48 @@
 
     </LinearLayout>
 
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:elevation="6dp"
+        android:layout_margin="5dp"
+        android:id="@+id/binaysearch"
+        app:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:text="Searching "
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/colorAccent"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:text="Rimon "
+                android:layout_gravity="center"
+                android:textColor="@color/colorAccent"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
 </ScrollView>

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -15,7 +16,7 @@ import com.algoplay.visualgo.R;
 
 import java.util.ArrayList;
 
-public class BinarySearchActivity extends AppCompatActivity {
+public class  BinarySearchActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     MyAdapter adapter;
     ArrayList<SearchItem> myitems=new ArrayList<>();
@@ -31,7 +32,7 @@ public class BinarySearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_binarysearch);
         this.setTitle("Binary Search");
 
-        for (int i=47;i>=0;i--){
+        for (int i=0;i<=47;i++){
              myitems.add(new SearchItem(i));
 
         }
@@ -39,20 +40,64 @@ public class BinarySearchActivity extends AppCompatActivity {
         Initialize();
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String a= plainText.getText().toString();
+                final String a= plainText.getText().toString();
                 //Toast.makeText(Searchingactivity.this, "button pressed"+a, Toast.LENGTH_SHORT).show();
                 //adapter.notifyDataSetChanged();
 
-                myitems.clear();
+                /*myitems.clear();
                 for( int i=0;i<=47;i++){
                     myitems.add(new SearchItem(i));
                 }
-                counter=23;
-                Callalgorithm(a);
+*/
+                StartAlgo(a);
+
+                Handler handler=new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final View vv = recyclerView.getLayoutManager().findViewByPosition(Integer.parseInt(a));
+                        vv.setBackgroundColor(Color.GREEN);
+                    }
+                },2000);
+
+
+                //Callalgorithm(a);
 
             }
         });
     }
+
+    private  void StartAlgo(String a){
+        final int bal = Integer.parseInt(a);
+        int aa=47/2;
+        final int Val = myitems.get(aa).getNumber();
+        final View v = recyclerView.getLayoutManager().findViewByPosition(counter);
+
+
+        if (Val==bal){
+            v.setBackgroundColor(Color.GREEN);
+            return;
+        }
+        else{
+
+
+            if (Val>bal){
+                RunAnimation(0,aa);
+            }else{
+                RunAnimation(aa,47);
+            }
+           //  v.setBackgroundColor(Color.BLACK);
+             binarySearch(0,47,bal);
+
+        }
+
+
+
+
+    }
+
+
+
 
     private void Callalgorithm(String a) {
 
@@ -75,7 +120,8 @@ public class BinarySearchActivity extends AppCompatActivity {
             if (Val==bal){
 
             }else{
-                v.setBackgroundColor(Color.BLACK);
+
+            v.setBackgroundColor(Color.BLACK);
             final Handler handler=new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -83,7 +129,7 @@ public class BinarySearchActivity extends AppCompatActivity {
                     counter++;
                     final View v = recyclerView.getLayoutManager().findViewByPosition(counter);
                     final int Val = myitems.get(counter).getNumber();
-                    //Toast.makeText(Searchingactivity.this, "button pressed" + Val, Toast.LENGTH_SHORT).show();
+
                     v.setBackgroundColor(Color.GREEN);
                     if (bal!=Val){
                         v.setBackgroundColor(Color.BLACK);
@@ -110,4 +156,72 @@ public class BinarySearchActivity extends AppCompatActivity {
 
 
     }
+
+    private int  binarySearch(int low , int high, int bal){
+        if (high>=1){
+
+            int mid=low+(high-low)/2;
+            if (mid==bal){
+                final View v = recyclerView.getLayoutManager().findViewByPosition(mid);
+              //   v.setBackgroundColor(Color.GREEN);
+                return 1;
+            }
+            if (mid>bal){
+
+                RemoveAnimation(mid+1,high);
+                return binarySearch(low,mid-1,bal);
+            }
+            else{
+                RemoveAnimation(low, mid-1);
+                return  binarySearch(mid+1,high,bal);
+            }
+
+
+        }else
+        { Toast.makeText(this, "Finished", Toast.LENGTH_SHORT).show();
+            return -1;
+        }
+
+    }
+
+    private  void RunAnimation(int low,int high){
+        int i=low;
+        for (i=low;i<high;i++){
+
+            Handler handler=new Handler();
+            final int finalI = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    final View v = recyclerView.getLayoutManager().findViewByPosition(finalI);
+                    v.setBackgroundColor(Color.BLACK);
+
+                }
+            },1000);
+
+
+       }
+
+
+    }
+
+    private  void RemoveAnimation(int low ,int high){
+        int i=low;
+        for (i=low;i<high;i++){
+
+            Handler handler=new Handler();
+            final int finalI = i;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    final View v = recyclerView.getLayoutManager().findViewByPosition(finalI);
+                    v.setBackgroundColor(getResources().getColor(R.color.fa));
+
+                }
+            },1000);
+
+
+        }
+    }
+
 }

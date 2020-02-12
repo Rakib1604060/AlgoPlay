@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="10"
-        android:gravity="center"
-        android:orientation="vertical"
-        >
+
 
         <ImageView
             android:layout_width="wrap_content"
@@ -20,184 +15,12 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"/>
 
-        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:elevation="6dp"
-            android:layout_margin="5dp"
-            android:id="@+id/searching"
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Searching "
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Rimon "
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-
-            </LinearLayout>
+            android:id="@+id/listview"
+            />
 
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:elevation="6dp"
-            android:layout_margin="5dp"
-            android:id="@+id/stack"
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Stack "
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Sharmin "
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:elevation="6dp"
-            android:layout_margin="5dp"
-            android:id="@+id/sorting"
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Sorting "
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:padding="5dp"
-                    android:layout_margin="5dp"
-                    android:text="Rakib "
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorAccent"
-                    />
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:elevation="6dp"
-        android:layout_margin="5dp"
-        android:id="@+id/binaysearch"
-        app:cardCornerRadius="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                android:text="Searching "
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textColor="@color/colorAccent"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:padding="5dp"
-                android:layout_margin="5dp"
-                android:text="Rimon "
-                android:layout_gravity="center"
-                android:textColor="@color/colorAccent"
-                />
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-</ScrollView>
+</LinearLayout>

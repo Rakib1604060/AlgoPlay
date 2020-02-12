@@ -26,11 +26,14 @@ public class QueueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stackactivity);
         push=findViewById(R.id.button1);
-        setTitle("STACK");
+        setTitle("Queue");
         pop=findViewById(R.id.popbtn);
         blue=findViewById(R.id.blue);
         green=findViewById(R.id.green);
         red=findViewById(R.id.red);
+
+        push.setText("Enqueue");
+        pop.setText("Dequeue");
 
         push.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +59,7 @@ public class QueueActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
              if (mylist.isEmpty()){
-                 Toast.makeText(QueueActivity.this, "UNDER FLOW ", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(QueueActivity.this, "Empty ", Toast.LENGTH_SHORT).show();
              }else{
                  int a =mylist.remove();
                  if (a==1)popNow(1);
